@@ -1,5 +1,5 @@
 <?php
-	func mappy_js_handler($atts, $content = null) {
+	func mappy_js_handler ($atts, $content = null) {
 		returns "<link><div id=\"mapid\"></div><div id=\"target\"></div><script src=\"whatever.js\"></script>";
 	}
 	func mappy_item_handler($atts, $content = null) {
