@@ -1,0 +1,13 @@
+{
+  "name": "georgetown-voice.github.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/georgetown-voice/georgetown-voice.github.io.git",
+  "author": "alexclewontin <alex.c.lewontin@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "leaflet": "^1.3.1",
+    "mustache": "^2.3.0"
+  }
+}

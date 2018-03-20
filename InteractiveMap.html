@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Map</title>
+    <link rel="stylesheet" href="scripts/node_modules/leaflet/dist/leaflet.css">
+    <script src="scripts/node_modules/leaflet/dist/leaflet.js"></script>
+    <script src="scripts/node_modules/mustache/mustache.js"></script>
+    <script src="scripts/node_modules/jquery/dist/jquery.js"></script>
+    <script src="scripts/map.js"></script>
+    
+    <style>  #mapid { height: 300px; width: 96%; margin: 2%} </style>
+    <style>  #content { width: 47%; float: left; margin-left: 2%; margin-right: 1%} </style>
+    <style>  #photo {float: left; width: 47%; margin-left: 1%; margin-right: 2%} </style>
+    
+</head>
+
+<body>     
+    <div id="mapid"></div>
+
+    
+
+<script id="template" type="x-tmpl-mustache/javascript"> 
+
+    <div id="title" align="center">{{title}}</div>
+    <div id="author" style="author">{{author}}</div>
+    <div id="content" style="content"></div>
+    <img src="{{photo}}" id="photo" alt="{{title}}"></img>
+
+</script>
+
+<div id="target"></div>
+
+</body>
+
+</html>
