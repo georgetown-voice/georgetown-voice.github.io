@@ -1,0 +1,35 @@
+/*
+ Theme Name:   Georgetown Voice's digital issue theme 
+ Theme URI:    
+ Description:  
+ Author:       
+ Author URI:   
+ Template:     citynews
+ Version:      1.0.0
+ License:      
+ License URI:  
+ Text Domain:  twenty-fifteen-child
+*/
+
+map 
+{ 
+    height: 300px; 
+    width: 96%; 
+    margin: 2%;
+}
+
+copy 
+{ 
+    width: 47%; 
+    float: left; 
+    margin-left: 2%; 
+    margin-right: 1%;
+}
+
+photo 
+{
+    float: left; 
+    width: 47%; 
+    margin-left: 1%; 
+    margin-right: 2%;
+}
