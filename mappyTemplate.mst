@@ -1,0 +1,4 @@
+    <div id="title" align="center">{{title}}</div>
+    <div id="author" style="author">{{author}}</div>
+    <div id="content" style="content"></div>
+    <img src="{{photo}}" id="photo" alt="{{title}}"></img>
