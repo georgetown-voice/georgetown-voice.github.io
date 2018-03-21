@@ -1,7 +1,7 @@
 
 //initialize the map, get the tiles from mapbox with Alex Lewontin's token
 
-function initializeMap()
+function initialize_map()
 {
     var lat = intialize_attribute_handler.lat;
     var long = initialize_attribute_handler.long;
@@ -20,40 +20,38 @@ function initializeMap()
 
 //define the relevant class
 
-class mapPin {
-    constructor(title, author, image_address, copy, lat, long) 
+class map_pin {
+    constructor(title, author, image_address, lat, long, copy) 
     {
-        mapPin.instances.push(this);
-        this.title = marker_attribute_handler.title;
+        map_pin.instances.push(this);
+        this.title = title;
         this.author = author;
-        this.image = image_address;
+        this.image_address = image_address;
         this.copy = copy;
-        this.mapMarker = L.marker([lat, long], {riseOnHover: true, opacity: .5}).addTo(mymap);
-    }
+        this.map_marker = L.marker([lat, long], {riseOnHover: true, opacity: .5}).addTo(mymap);
+        this.on('mouseover', function(e)
+        {
+            $.get('mappy_template.mst', function(template){
+                //var template = $('#template').html();
+                Mustache.parse(template);
+                var output = Mustache.render(template, {title : this.title, author : this.author,
+                    copy : this.copy, image_address : this.image_address});
+                $("#target").html(output);
+            })
 
-}
-
-mapPin.instances = [];
-
-mapPin.on('mouseover', function(e)
-{
-
-    changePost(this);
-    for(i = 0; i < mapPin.instances.length; i++)
-    {
-        mapPin.instances[i].setOpacity(.5);
-        this.setOpacity(1.0);
-    }
-
-})
-
-function changePost(mapPin)
-{
+            for(i = 0; i < map_pin.instances.length; i++)
+            {
+                map_pin.instances[i].setOpacity(.5);
     
-    $.get('mappyTemplate.mst', function(template){
-    //var template = $('#template').html();
-    Mustache.parse(template);
-    var output = Mustache.render(template, mapPin);
-    $("#target").html(output);
-    })
+            }
+            this.setOpacity(1.0);
+            
+
+        })
+
+    }    
+
 }
+
+map_pin.instances = [];
+

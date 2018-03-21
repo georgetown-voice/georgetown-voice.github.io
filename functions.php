@@ -41,11 +41,21 @@
 			'long' => 'LONG HERE'
 		), $atts);
 
+		$a['copy'] = $content;
+
 		wp_enqueue_style('mappy_style');
 		wp_enqueue_script('mappy');
 		wp_localize_script('mappy', 'marker_attribute_handler', $a);
-
-		return "new constructor marker something something something"
+		
+		ob_start();
+		?>
+		<script type="text/javascript">
+		let marker_attribute_handler.id = new map_pin(marker_attribute_handler.title, marker_attribute_handler.author, 
+			marker_attribute_handler.image_address, marker_attribute_handler.lat, marker_attribute_handler.long, 
+			marker_attribute_handler.copy);
+		</script>
+		<?php
+		return ob_get_clean();
 	}
 	add_shortcode('add mappy marker', 'add_mappy_marker' );
 
